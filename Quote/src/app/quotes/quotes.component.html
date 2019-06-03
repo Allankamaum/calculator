@@ -1,20 +1,46 @@
+<div class="container">
+
+<br>
+<p >I am so clever that sometimes I don't understand a single word of what I am saying.
+― Oscar Wilde</p>
+<button (click) = 'QuoteComplete(true)'> Complete </button>
+
+
+<p class="card p1">“To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.”
+― Ralph Waldo Emerson.</p>
 <p>
   <label>
-    Name:
-    <input type="text" [formControl]="name">
+    <div class="form-group">
+    Enter Name:
+    <input class="form-control" type="text" [formControl]="name" required>
+    </div>
+
     Enter Quote:
-    <input type="text" [formControl]="quote">
+    <input class="form-control" type="text" [formControl]="quote">
   </label>
   <br>
-  <button (click)="updateName()">Add Quote</button>
+  <button class="add" (click)="updateName()">Add Quote</button>
+<br>
+<br>
+
+
+
+<button class="add" (click)="updateQuote()">UpVote</button>
+<button class="add" (click)="updateName()">DownVote</button>
+
 </p>
 <p></p>
 <p>
- value:{{name.value}}
+  <li *ngFor="let quote of quotes">
+      {{ name.value }}
+    </li>
 </p>
+
+
 
 <div>
   <p>
     value:{{quote.value}}
   </p>
+</div>
 </div>
