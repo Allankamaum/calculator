@@ -1,0 +1,20 @@
+<p>
+  <label>
+    Name:
+    <input type="text" [formControl]="name">
+    Enter Quote:
+    <input type="text" [formControl]="quote">
+  </label>
+  <br>
+  <button (click)="updateName()">Add Quote</button>
+</p>
+<p></p>
+<p>
+ value:{{name.value}}
+</p>
+
+<div>
+  <p>
+    value:{{quote.value}}
+  </p>
+</div>
