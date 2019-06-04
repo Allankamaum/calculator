@@ -3,52 +3,22 @@
 <br>
 <p >I am so clever that sometimes I don't understand a single word of what I am saying.
 ― Oscar Wilde</p>
-<button (click) = 'QuoteComplete(true)'> Complete </button>
 
-
-<p class="card p1">“To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.”
-― Ralph Waldo Emerson.</p>
-<p>
-
-<p>“I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.”
+<p >I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.”
 ― Maya Angelou</p>
+<p class="card p1">“To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.”
+  ― Ralph Waldo Emerson.</p>
 
-<p>“To live is the rarest thing in the world. Most people exist, that is all.”
-― Oscar Wilde</p>
-
-
-  <label>
-    <div class="form-group">
-    Enter Name:
-    <input class="form-control" type="text" [formControl]="name" required>
-    </div>
-
-    Enter Quote:
-    <input class="form-control" type="text" [formControl]="quote">
-  </label>
-  <br>
-  <button class="add" (click)="updateName()">Add Quote</button>
-<br>
-<br>
+  <button class="btn btn-danger"  (click)= 'quoteDelete(true)'>Delete </button>
 
 
-
-<button class="add" (click)="updateQuote()">UpVote</button>
-<button class="add" (click)="updateName()">DownVote</button>
-
-</p>
-<p></p>
-<p>
-  <li *ngFor="let quote of quotes">
-      {{ name.value }}
-    </li>
-</p>
+</div>
 
 
-
-<div>
+  <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
   <p>
-    value:{{quote.value}}
-  </p>
-</div>
-</div>
+      <li *ngFor="let quote of quotes">
+          {{quote.name}}{{quote.publisher}}
+        </li>
+    </p>
+  <app-quote-details [quote]='quote' (isComplete)= 'deleteQuote($event,i)' ></app-quote-details>
