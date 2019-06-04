@@ -4,8 +4,6 @@
 <p >I am so clever that sometimes I don't understand a single word of what I am saying.
 ― Oscar Wilde</p>
 
-<p >I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.”
-― Maya Angelou</p>
 <p class="card p1">“To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.”
   ― Ralph Waldo Emerson.</p>
 
@@ -18,7 +16,8 @@
   <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
   <p>
       <li *ngFor="let quote of quotes">
-          {{quote.name}}{{quote.publisher}}{{quote.quote}}. {{quote.date |date }}
+          <strong>{{quote.name}}</strong>.{{quote.publisher}}.<strong>"{{quote.quote}}".</strong> {{quote.date |date}}
         </li>
     </p>
   <app-quote-details [quote]='quote' (isComplete)= 'deleteQuote($event,i)' ></app-quote-details>
+  
