@@ -7,7 +7,7 @@
 <p class="card p1">“To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.”
   ― Ralph Waldo Emerson.</p>
 
-  <button class="btn btn-danger"  (click)= 'quoteDelete(true)'>Delete </button>
+  <button class="btn btn-danger"  >Delete </button>
 
 
 </div>
@@ -20,4 +20,3 @@
         </li>
     </p>
   <app-quote-details [quote]='quote' (isComplete)= 'deleteQuote($event,i)' ></app-quote-details>
-  
